@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex,nofollow">
+    <meta name="googlebot" content="noindex,nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code | Adellouch Samy</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="bloc_page">
+        <header>
+            <nav aria-label="Navigation principale">
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="projets.html">Projets</a></li>
+                    <li><a class="active" href="code.html">Code</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="content code-content">
+                <article>
+                    <h1>Code</h1>
+
+                    <div class="item" id="code-rendu-monnaie">
+                        <h3><a href="programme_rendu_monnaie.py" target="_blank" rel="noreferrer">Rendu de Monnaie</a></h3>
+
+                        <div class="money-terminal" id="rendu-monnaie">
+                            <div class="money-terminal-header">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <strong>Terminal - rendu de monnaie</strong>
+                            </div>
+
+                            <div class="money-terminal-screen" id="money-screen" aria-live="polite"></div>
+
+                            <form class="money-terminal-form" id="money-form">
+                                <label for="money-input">&gt;</label>
+                                <input id="money-input" autocomplete="off">
+                                <button type="submit">Envoyer</button>
+                            </form>
+
+                            <div class="money-terminal-actions">
+                                <button type="button" id="money-demo">Stock exemple</button>
+                                <button type="button" id="money-reset">Recommencer</button>
+                            </div>
+                        </div>
+
+                        <div class="download-list compact">
+                            <a class="download-link" href="programme_rendu_monnaie.py" download="programme_rendu_monnaie.py">
+                                Telecharger le programme Python (.py)
+                            </a>
+                            <a class="download-link" href="dossier-rendu-monnaie.html" target="_blank" rel="noreferrer">
+                                Consulter le dossier projet
+                            </a>
+                            <a class="download-link" href="cas-tests-rendu-monnaie.html" target="_blank" rel="noreferrer">
+                                Consulter les cas de test
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="item" id="code-touche-coule">
+                        <h3><a href="toucher_coule.py" target="_blank" rel="noreferrer">Toucher-Coule Bateau</a></h3>
+
+                        <div class="money-terminal" id="touche-coule">
+                            <div class="money-terminal-header">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <strong>Terminal - toucher-coule</strong>
+                            </div>
+
+                            <div class="money-terminal-screen battle-screen" id="battle-screen" aria-live="polite"></div>
+
+                            <form class="money-terminal-form" id="battle-form">
+                                <label for="battle-input">&gt;</label>
+                                <input id="battle-input" autocomplete="off">
+                                <button type="submit">Envoyer</button>
+                            </form>
+
+                            <div class="money-terminal-actions">
+                                <button type="button" id="battle-auto">Placement auto</button>
+                                <button type="button" id="battle-reset">Recommencer</button>
+                            </div>
+                        </div>
+
+                        <div class="download-list compact">
+                            <a class="download-link" href="toucher_coule.py" download="toucher_coule.py">
+                                Telecharger le programme Python (.py)
+                            </a>
+                            <a class="download-link" href="dossier-touche-coule.html" target="_blank" rel="noreferrer">
+                                Consulter le dossier projet
+                            </a>
+                            <a class="download-link" href="cas-tests-touche-coule.html" target="_blank" rel="noreferrer">
+                                Consulter les cas de test
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="item" id="code-gestionnaire-mdp">
+                        <h3><a href="gestionnaire_mdp.py" target="_blank" rel="noreferrer">Gestionnaire de Mots de Passe</a></h3>
+
+                        <div class="money-terminal" id="gestionnaire-mdp">
+                            <div class="money-terminal-header">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <strong>Terminal - gestionnaire de mots de passe</strong>
+                            </div>
+
+                            <div class="money-terminal-screen password-screen" id="password-screen" aria-live="polite"></div>
+
+                            <form class="money-terminal-form" id="password-form">
+                                <label for="password-input">&gt;</label>
+                                <input id="password-input" autocomplete="off">
+                                <button type="button" class="password-toggle" id="password-toggle" hidden>Afficher</button>
+                                <button type="submit">Envoyer</button>
+                            </form>
+
+                            <div class="money-terminal-actions">
+                                <button type="button" id="password-demo">Coffre exemple</button>
+                                <button type="button" id="password-reset">Recommencer</button>
+                            </div>
+                        </div>
+
+                        <div class="download-list compact">
+                            <a class="download-link" href="gestionnaire_mdp.py" download="gestionnaire_mdp.py">
+                                Telecharger le programme Python (.py)
+                            </a>
+                            <a class="download-link" href="dossier-gestionnaire-mdp.html" target="_blank" rel="noreferrer">
+                                Consulter le dossier projet
+                            </a>
+                            <a class="download-link" href="cas-tests-gestionnaire-mdp.html" target="_blank" rel="noreferrer">
+                                Consulter les cas de test
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </section>
+        </main>
+    </div>
+
+    <script src="rendu-monnaie.js"></script>
+    <script src="touche-coule.js"></script>
+    <script src="gestionnaire-mdp.js"></script>
+</body>
+</html>

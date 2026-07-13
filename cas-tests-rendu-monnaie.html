@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex,nofollow">
+    <meta name="googlebot" content="noindex,nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cas de test - Rendu de Monnaie</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="text-document-body">
+    <main class="text-document">
+        <pre>CAS DE TEST DU PROGRAMME DE RENDU DE MONNAIE
+===========================================
+
+Pour lancer le programme dans Visual Studio Code :
+
+python programme_rendu_monnaie.py
+
+Le programme demande d&#x27;abord le contenu de la caisse. Les quantités sont à
+saisir dans l&#x27;ordre suivant :
+
+1. Billet de 500 EUR
+2. Billet de 200 EUR
+3. Billet de 100 EUR
+4. Billet de 50 EUR
+5. Billet de 20 EUR
+6. Billet de 10 EUR
+7. Billet de 5 EUR
+8. Pièce de 2 EUR
+9. Pièce de 1 EUR
+10. Pièce de 50 centimes
+11. Pièce de 20 centimes
+12. Pièce de 10 centimes
+13. Pièce de 5 centimes
+14. Pièce de 2 centimes
+15. Pièce de 1 centime
+
+
+CAS 1 - Somme basique
+---------------------
+
+Objectif :
+Tester un rendu simple de 1,30 EUR.
+
+Stock de caisse à saisir :
+
+0
+0
+0
+0
+0
+0
+0
+0
+5
+5
+5
+5
+5
+5
+5
+
+Transaction :
+
+Montant à payer : 18,70
+Somme donnée par le client : 20
+Voulez-vous valider cette transaction : o
+Voulez-vous faire une autre transaction : n
+
+Résultat attendu :
+
+Le programme doit rendre 1,30 EUR avec :
+
+- 1 pièce de 1 EUR
+- 1 pièce de 20 centimes
+- 1 pièce de 10 centimes
+
+
+CAS 2 - Somme complexe
+----------------------
+
+Objectif :
+Tester un rendu plus complexe de 12,14 EUR avec un stock limité.
+
+Stock de caisse à saisir :
+
+0
+0
+0
+0
+0
+1
+0
+1
+0
+0
+0
+1
+0
+2
+0
+
+Transaction :
+
+Montant à payer : 37,86
+Somme donnée par le client : 50
+Voulez-vous valider cette transaction : o
+Voulez-vous faire une autre transaction : n
+
+Résultat attendu :
+
+Le programme doit rendre 12,14 EUR avec :
+
+- 1 billet de 10 EUR
+- 1 pièce de 2 EUR
+- 1 pièce de 10 centimes
+- 2 pièces de 2 centimes
+
+Ce cas montre que le programme tient compte de la monnaie disponible dans la
+caisse et ne propose pas de coupures absentes.
+
+
+CAS 3 - Erreur : somme donnée insuffisante
+------------------------------------------
+
+Objectif :
+Vérifier que le programme explique pourquoi le cas est impossible.
+
+Stock de caisse à saisir :
+
+0
+0
+0
+0
+0
+1
+1
+5
+5
+5
+5
+5
+5
+5
+5
+
+Transaction :
+
+Montant à payer : 25
+Somme donnée par le client : 20
+Voulez-vous faire une autre transaction : n
+
+Résultat attendu :
+
+Le programme doit afficher un message de ce type :
+
+Impossible de traiter ce cas : somme insuffisante, il manque 5,00 EUR.
+
+Cela signifie que le client n&#x27;a pas donné assez d&#x27;argent pour payer l&#x27;achat.
+</pre>
+    </main>
+</body>
+</html>

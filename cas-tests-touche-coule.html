@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex,nofollow">
+    <meta name="googlebot" content="noindex,nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cas de test - Toucher-Coule Bateau</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="text-document-body">
+    <main class="text-document">
+        <pre>CAS DE TEST 1 - Nouvelle partie normale
+Objectif :
+Vérifier que le jeu se lance et que la grille 10 x 10 s&#x27;affiche.
+
+Étapes :
+1. Lancer le programme.
+2. Choisir &quot;1. Nouvelle partie solo&quot;.
+3. Répondre &quot;n&quot; au mode test.
+4. Entrer une coordonnée valide, par exemple A1.
+
+Résultat attendu :
+Le programme affiche la grille 10 x 10.
+Le tir est accepté.
+Le programme indique soit &quot;À l&#x27;eau&quot;, soit &quot;Touché&quot;, selon la position cachée des bateaux.
+
+
+CAS DE TEST 2 - Mode test et bateau coulé
+Objectif :
+Vérifier que le programme détecte les cases des bateaux et les bateaux coulés.
+
+Étapes :
+1. Lancer le programme.
+2. Choisir &quot;1. Nouvelle partie solo&quot;.
+3. Répondre &quot;o&quot; au mode test.
+4. Observer les cases marquées B.
+5. Tirer sur toutes les cases d&#x27;un même bateau.
+
+Résultat attendu :
+Les bateaux sont visibles avec le symbole B.
+Chaque tir sur un bateau affiche &quot;Touché&quot;.
+Quand toutes les cases du bateau sont touchées, le programme affiche &quot;Touché-coulé&quot;.
+
+
+CAS DE TEST 3 - Erreur de saisie
+Objectif :
+Vérifier que le programme refuse les coordonnées impossibles.
+
+Étapes :
+1. Lancer une partie.
+2. Entrer Z12.
+3. Entrer A11.
+4. Entrer une coordonnée correcte comme B2.
+5. Entrer une deuxième fois B2.
+
+Résultat attendu :
+Z12 est refusé car la ligne doit être entre A et J.
+A11 est refusé car la colonne doit être entre 1 et 10.
+B2 est accepté.
+Le deuxième tir sur B2 affiche que la case a déjà été visée et le tir ne compte pas.
+
+
+CAS DE TEST 4 - Partie contre l&#x27;IA
+Objectif :
+Vérifier que le mode contre l&#x27;IA affiche les deux grilles et actualise les tirs tour par tour.
+
+Étapes :
+1. Lancer le programme.
+2. Choisir &quot;2. Jouer contre l&#x27;IA&quot;.
+3. Répondre &quot;n&quot; à la question du placement manuel.
+4. Observer la grille de l&#x27;IA et la grille du joueur.
+5. Entrer une coordonnée valide, par exemple A1.
+6. Observer le tir du joueur.
+7. Observer le tir automatique de l&#x27;IA.
+
+Résultat attendu :
+La grille de l&#x27;IA affiche le tir du joueur avec O ou X.
+La grille du joueur affiche ses bateaux avec B.
+Après le tour de l&#x27;IA, la grille du joueur est actualisée avec O ou X.
+Le programme continue ensuite avec le tour suivant.
+
+
+CAS DE TEST 5 - Placement manuel des bateaux
+Objectif :
+Vérifier que le joueur peut choisir lui-même l&#x27;emplacement de ses bateaux.
+
+Étapes :
+1. Lancer le programme.
+2. Choisir &quot;2. Jouer contre l&#x27;IA&quot;.
+3. Répondre &quot;o&quot; à la question du placement manuel.
+4. Placer le bateau de 2 cases en A1 direction H.
+5. Placer le premier bateau de 3 cases en C1 direction H.
+6. Placer le deuxième bateau de 3 cases en E1 direction H.
+7. Placer le bateau de 4 cases en G1 direction H.
+8. Observer la grille du joueur.
+
+Résultat attendu :
+Les bateaux apparaissent avec le symbole B.
+Le programme accepte les placements valides.
+La partie contre l&#x27;IA commence ensuite normalement.
+
+
+CAS DE TEST 6 - Placement manuel impossible
+Objectif :
+Vérifier que le programme refuse un bateau qui sort de la grille ou chevauche un autre bateau.
+
+Étapes :
+1. Lancer le programme.
+2. Choisir &quot;2. Jouer contre l&#x27;IA&quot;.
+3. Répondre &quot;o&quot; à la question du placement manuel.
+4. Essayer de placer le bateau de 2 cases en J10 direction H.
+5. Placer correctement ce bateau en A1 direction H.
+6. Essayer de placer le bateau suivant en A1 direction V.
+
+Résultat attendu :
+Le placement en J10 direction H est refusé car le bateau sort de la grille.
+Le placement en A1 direction V est refusé car il chevauche le bateau déjà placé.
+Le programme demande au joueur de choisir une autre position.
+</pre>
+    </main>
+</body>
+</html>

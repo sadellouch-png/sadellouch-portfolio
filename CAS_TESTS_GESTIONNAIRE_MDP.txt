@@ -1,0 +1,65 @@
+CAS DE TEST 1 - CRÉATION DU COFFRE ET AJOUT SIMPLE
+
+Objectif :
+Vérifier que le programme crée un coffre et ajoute un mot de passe.
+
+Étapes :
+1. Lancer le programme.
+2. Créer un mot de passe maître.
+3. Choisir "Ajouter un mot de passe".
+4. Entrer le service : Gmail
+5. Entrer l'identifiant : samy@gmail.com
+6. Générer un mot de passe fort.
+7. Ajouter une note facultative.
+8. Revenir au menu et lister les services.
+
+Résultat attendu :
+Le service Gmail apparaît dans la liste. Le fichier coffre_mdp.json est créé.
+
+
+CAS DE TEST 2 - RECHERCHE ET AFFICHAGE
+
+Objectif :
+Vérifier que l'utilisateur peut retrouver une entrée existante.
+
+Étapes :
+1. Relancer le programme.
+2. Saisir le bon mot de passe maître.
+3. Choisir "Rechercher une entrée".
+4. Rechercher : Gmail
+5. Sélectionner le résultat.
+6. Accepter d'afficher le mot de passe.
+
+Résultat attendu :
+Le programme affiche le service, l'identifiant, la note et le mot de passe.
+
+
+CAS DE TEST 3 - ERREUR DE MOT DE PASSE MAÎTRE
+
+Objectif :
+Vérifier que le coffre refuse l'accès avec un mauvais mot de passe maître.
+
+Étapes :
+1. Lancer le programme avec un coffre déjà créé.
+2. Entrer un mauvais mot de passe maître.
+3. Recommencer trois fois.
+
+Résultat attendu :
+Le programme indique que le mot de passe maître est incorrect et refuse l'accès au coffre.
+
+
+CAS DE TEST 4 - SUPPRESSION D'UNE ENTRÉE
+
+Objectif :
+Vérifier que le programme peut supprimer un mot de passe enregistré.
+
+Étapes :
+1. Ouvrir le coffre avec le bon mot de passe maître.
+2. Choisir "Supprimer une entrée".
+3. Rechercher : Gmail
+4. Sélectionner l'entrée.
+5. Confirmer la suppression.
+6. Lister les services.
+
+Résultat attendu :
+Le service Gmail n'apparaît plus dans la liste.

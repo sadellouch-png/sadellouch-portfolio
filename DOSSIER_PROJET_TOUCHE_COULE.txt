@@ -1,0 +1,134 @@
+# Touché-Coulé Bateau en Python
+
+## Présentation du projet
+
+Ce projet est un jeu de Touché-Coulé réalisé en Python. Le joueur doit retrouver
+et couler quatre bateaux cachés sur une grille de 10 cases par 10 cases.
+
+Le jeu fonctionne directement dans le terminal. Il affiche une grille lisible,
+demande au joueur de choisir une case, puis indique si le tir est manqué,
+touché ou coulé. Le programme contient aussi un mode contre une IA, avec un
+affichage tour par tour de la grille du joueur et de la grille adverse.
+
+Dans le mode contre l'IA, le joueur peut choisir de placer lui-même ses bateaux
+avant le début de la partie.
+
+## Objectifs
+
+- Développer un jeu complet en Python.
+- Gérer une grille de jeu de 10 x 10.
+- Placer automatiquement des bateaux sans chevauchement.
+- Vérifier les coordonnées saisies par l'utilisateur.
+- Gérer les tirs déjà effectués.
+- Détecter lorsqu'un bateau est touché ou coulé.
+- Détecter la condition de victoire.
+- Ajouter un mode de jeu contre une IA.
+- Afficher les deux grilles pendant une partie contre l'IA.
+- Permettre au joueur de placer ses propres bateaux.
+
+## Composition des bateaux
+
+Le jeu contient quatre bateaux :
+
+- 1 bateau de 2 cases ;
+- 2 bateaux de 3 cases ;
+- 1 bateau de 4 cases.
+
+Cette répartition respecte la demande de quatre bateaux tout en gardant les
+tailles principales demandées : 2, 3 et 4 cases.
+
+## Fonctionnement du programme
+
+Au lancement, le programme affiche un menu :
+
+1. Nouvelle partie solo.
+2. Jouer contre l'IA.
+3. Afficher les règles.
+4. Quitter.
+
+Lorsqu'une partie commence, les bateaux sont placés automatiquement par le
+programme. Le joueur tire ensuite sur des cases en utilisant des coordonnées
+comme `A1`, `B7` ou `J10`.
+
+En mode contre l'IA, le joueur peut choisir entre deux options :
+
+- placement automatique de ses bateaux ;
+- placement manuel de ses bateaux.
+
+Pour le placement manuel, le joueur indique une case de départ puis une
+direction :
+
+- `H` pour horizontal ;
+- `V` pour vertical.
+
+Le programme affiche la grille après chaque tir :
+
+- `.` représente une case inconnue ;
+- `O` représente un tir manqué ;
+- `X` représente un bateau touché ;
+- `B` représente un bateau visible en mode test ou sur la grille du joueur.
+
+## Mode contre l'IA
+
+Le mode contre l'IA ajoute deux flottes :
+
+- la flotte du joueur ;
+- la flotte de l'IA.
+
+Le joueur voit deux grilles :
+
+- la grille de l'IA, qui montre uniquement les tirs du joueur ;
+- la grille du joueur, qui montre ses bateaux et les tirs de l'IA.
+
+Après chaque tir du joueur, la grille de l'IA est actualisée. Ensuite, l'IA joue
+automatiquement un tir sur la grille du joueur. La grille du joueur est alors
+actualisée à son tour.
+
+L'IA commence par tirer au hasard. Lorsqu'elle touche un bateau, elle essaye
+ensuite les cases voisines pour augmenter ses chances de couler le bateau.
+
+## Gestion des règles
+
+Le programme contrôle plusieurs règles importantes :
+
+- Un bateau ne peut pas sortir de la grille.
+- Deux bateaux ne peuvent pas se chevaucher.
+- En placement manuel, un placement invalide est refusé et le joueur doit recommencer.
+- Le joueur ne peut pas tirer deux fois sur la même case sans être prévenu.
+- Un bateau est coulé lorsque toutes ses cases ont été touchées.
+- La partie est gagnée lorsque tous les bateaux sont coulés.
+- En mode IA, les tours alternent entre le joueur et l'ordinateur.
+
+## Placement des bateaux
+
+Le programme propose deux types de placement.
+
+En placement automatique, pour chaque bateau, le programme choisit aléatoirement :
+
+- une ligne de départ ;
+- une colonne de départ ;
+- une direction horizontale ou verticale.
+
+Le programme vérifie ensuite que le bateau tient dans la grille et qu'il ne
+chevauche pas un autre bateau. Si ce n'est pas possible, il recommence avec une
+autre position.
+
+En placement manuel, le joueur choisit lui-même la case de départ et la
+direction. Le programme vérifie les mêmes conditions : le bateau doit rester
+dans la grille et ne doit pas chevaucher un autre bateau.
+
+## Fichier principal
+
+Le code principal se trouve dans le fichier :
+
+`toucher_coule.py`
+
+Il n'utilise aucune bibliothèque externe. Seule la bibliothèque standard
+`random` est utilisée pour placer les bateaux.
+
+## Améliorations possibles
+
+- Ajouter un système de score.
+- Sauvegarder les meilleurs scores dans un fichier.
+- Ajouter plusieurs niveaux de difficulté.
+- Ajouter un vrai mode deux joueurs.

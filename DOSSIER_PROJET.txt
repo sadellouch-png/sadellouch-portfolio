@@ -1,0 +1,171 @@
+# Dossier de projet - Programme de rendu de monnaie
+
+## 1. Contexte
+
+Ce projet consiste à développer une application Python permettant de calculer
+automatiquement la monnaie à rendre lors d'un paiement. Contrairement à un
+simple calcul de différence, le programme prend en compte les billets et les
+pièces réellement disponibles dans la caisse afin de déterminer un rendu de
+monnaie réalisable.
+
+## 2. Problématique
+
+Dans un commerce, il ne suffit pas de connaître le montant à rendre. Il faut
+aussi savoir si la caisse possède les bonnes coupures.
+
+Exemple :
+
+- Le client doit payer 18,70 EUR.
+- Il donne 20,00 EUR.
+- Il faut rendre 1,30 EUR.
+
+Avec une caisse complète, le rendu peut être :
+
+- 1 pièce de 1 EUR
+- 1 pièce de 20 centimes
+- 1 pièce de 10 centimes
+
+Mais si la caisse ne contient pas de pièce de 1 EUR, le programme doit chercher
+une autre solution possible, par exemple :
+
+- 2 pièces de 50 centimes
+- 1 pièce de 20 centimes
+- 1 pièce de 10 centimes
+
+## 3. Objectifs
+
+- Créer une interface utilisable dans le terminal.
+- Demander le stock de monnaie disponible au démarrage.
+- Demander le montant à payer.
+- Demander la somme donnée par le client.
+- Calculer le rendu exact si possible.
+- Minimiser le nombre de billets et de pièces rendus.
+- Refuser proprement une transaction impossible.
+- Mettre à jour la caisse après validation.
+- Tester la logique indépendamment de l'interface.
+
+## 4. Public visé
+
+L'utilisateur visé est une personne qui veut simuler une caisse de commerce.
+
+Le programme est volontairement lancé dans le terminal avec des questions
+`input()` afin d'être facile à exécuter dans Visual Studio Code sans
+bibliothèque externe.
+
+## 5. Structure technique
+
+Le projet est divisé en plusieurs fichiers :
+
+- `app.py` : interface console, menus et saisies utilisateur.
+- `change.py` : logique métier et calcul algorithmique.
+- `tests/test_change.py` : tests unitaires.
+
+Cette séparation est importante : elle permet de tester les calculs sans
+dépendre de l'affichage.
+
+## 6. Représentation des données
+
+Les montants sont stockés en centimes sous forme d'entiers.
+
+Exemples :
+
+- 18,70 EUR devient `1870`
+- 20,00 EUR devient `2000`
+- 1,30 EUR devient `130`
+
+Ce choix évite les erreurs d'arrondi souvent présentes avec les nombres
+décimaux flottants.
+
+La caisse est représentée par un dictionnaire :
+
+```python
+{
+    100: 3,
+    50: 2,
+    20: 5,
+}
+```
+
+Cela signifie :
+
+- 3 pièces de 1 EUR
+- 2 pièces de 50 centimes
+- 5 pièces de 20 centimes
+
+## 7. Algorithme utilisé
+
+Sans contrainte de stock, on peut rendre la monnaie avec une stratégie simple :
+prendre la plus grande coupure possible, puis continuer avec le reste.
+
+Avec un stock limité, cette stratégie peut échouer. Le programme utilise donc
+une programmation dynamique.
+
+Principe :
+
+1. On part du montant `0`.
+2. On teste les billets et pièces disponibles.
+3. On mémorise les meilleures combinaisons pour chaque montant atteignable.
+4. On garde la combinaison avec le moins de billets et de pièces.
+5. À la fin, on regarde si le montant exact à rendre est atteignable.
+
+Cette approche est plus fiable qu'un simple algorithme glouton lorsque la
+caisse ne contient pas toutes les coupures.
+
+## 8. Gestion des erreurs
+
+Le programme vérifie :
+
+- les montants vides ;
+- les montants négatifs ;
+- les montants avec plus de deux décimales ;
+- les quantités négatives ;
+- les paiements insuffisants ;
+- les rendus impossibles avec la caisse actuelle.
+
+Les erreurs sont affichées clairement dans le terminal.
+
+## 9. Planning possible sur 4 séquences
+
+Séquence 1 :
+
+- Analyse du sujet.
+- Choix des fonctionnalités.
+- Création de la structure du projet.
+- Première version du calcul sans stock.
+
+Séquence 2 :
+
+- Ajout de la gestion de caisse.
+- Mise en place des saisies utilisateur.
+- Création du menu terminal.
+- Validation des erreurs de saisie.
+
+Séquence 3 :
+
+- Amélioration de l'algorithme avec programmation dynamique.
+- Ajout des tests unitaires.
+- Tests avec différents scénarios.
+- Correction des cas limites.
+
+Séquence 4 :
+
+- Nettoyage du code.
+- Rédaction de la documentation.
+- Préparation de la démonstration.
+- Vérification finale et présentation.
+
+## 10. Améliorations possibles
+
+- Sauvegarder la caisse dans un fichier JSON.
+- Ajouter un historique des transactions.
+- Exporter un ticket de caisse.
+- Créer une interface web plus complète.
+- Ajouter une authentification administrateur.
+- Gérer plusieurs devises.
+
+## 11. Conclusion
+
+Ce projet montre qu'un problème simple en apparence peut demander une vraie
+réflexion algorithmique. Le programme doit calculer un montant, mais aussi
+tenir compte des contraintes réelles de la caisse. C'est ce qui rend le sujet
+intéressant pour un projet de première année en informatique.

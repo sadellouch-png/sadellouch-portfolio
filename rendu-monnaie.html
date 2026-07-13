@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex,nofollow">
+    <meta name="googlebot" content="noindex,nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rendu de Monnaie | Votre Nom</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="bloc_page">
+        <header>
+            <nav aria-label="Navigation principale">
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a class="active" href="projets.html">Projets</a></li>
+                    <li><a href="code.html">Code</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="content">
+                <article>
+                    <h1>Rendu de Monnaie</h1>
+
+                    <div class="money-terminal" id="rendu-monnaie">
+                        <div class="money-terminal-header">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <strong>Terminal - rendu de monnaie</strong>
+                        </div>
+
+                        <div class="money-terminal-screen" id="money-screen" aria-live="polite"></div>
+
+                        <form class="money-terminal-form" id="money-form">
+                            <label for="money-input">&gt;</label>
+                            <input id="money-input" autocomplete="off">
+                            <button type="submit">Envoyer</button>
+                        </form>
+
+                        <div class="money-terminal-actions">
+                            <button type="button" id="money-demo">Stock exemple</button>
+                            <button type="button" id="money-reset">Recommencer</button>
+                        </div>
+                    </div>
+
+                </article>
+            </section>
+        </main>
+    </div>
+
+    <script src="rendu-monnaie.js"></script>
+</body>
+</html>

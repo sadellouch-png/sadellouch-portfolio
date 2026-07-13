@@ -1,0 +1,88 @@
+# Dossier projet - Gestionnaire de mots de passe
+
+## Présentation
+
+Ce projet est un gestionnaire de mots de passe local développé en Python. Il
+permet de créer un coffre-fort protégé par un mot de passe maître, puis
+d'ajouter, rechercher, modifier et supprimer des identifiants.
+
+Le programme fonctionne dans le terminal. L'utilisateur peut aussi générer des
+mots de passe forts pour ses comptes.
+
+## Objectifs du projet
+
+- Créer une application Python utile et sécurisée.
+- Comprendre la différence entre un mot de passe maître et les mots de passe stockés.
+- Utiliser un fichier JSON pour sauvegarder des données.
+- Chiffrer les données sensibles avant de les enregistrer sur le disque.
+- Manipuler les fonctions, les boucles, les conditions et les listes.
+- Gérer les erreurs et les choix de l'utilisateur dans une interface terminal.
+
+## Fonctionnalités
+
+- Création d'un coffre-fort local.
+- Protection par mot de passe maître.
+- Dérivation d'une clé avec PBKDF2-HMAC-SHA256.
+- Chiffrement du coffre avec Fernet.
+- Ajout d'un service, d'un identifiant, d'un mot de passe et d'une note.
+- Recherche par service ou identifiant.
+- Liste des services enregistrés.
+- Modification d'une entrée.
+- Suppression d'une entrée.
+- Génération de mots de passe forts.
+- Sauvegarde automatique après modification.
+
+## Fichiers du projet
+
+- `gestionnaire_mdp.py` : code principal du programme.
+- `coffre_mdp.json` : fichier créé automatiquement au premier lancement.
+- `DOSSIER_PROJET.md` : présentation du projet.
+- `CAS_TESTS.txt` : scénarios de test.
+- `requirements.txt` : dépendance nécessaire.
+
+## Structure des données
+
+Les mots de passe ne sont pas stockés directement en clair dans le fichier JSON.
+Le programme chiffre la liste des entrées avant de l'écrire dans `coffre_mdp.json`.
+
+Chaque entrée contient :
+
+- le nom du service ;
+- l'identifiant ou l'adresse mail ;
+- le mot de passe ;
+- une note facultative.
+
+## Sécurité
+
+Le mot de passe maître ne sert pas directement à chiffrer les données. Il est
+transformé en clé avec PBKDF2-HMAC-SHA256 et un sel aléatoire. Cette clé permet
+ensuite de chiffrer et de déchiffrer le coffre avec Fernet.
+
+Le fichier `coffre_mdp.json` peut donc rester sur l'ordinateur sans afficher
+directement les mots de passe. Sans le mot de passe maître, le coffre ne peut
+pas être ouvert.
+
+## Limites
+
+Ce projet est un projet éducatif. Il montre les bases d'un gestionnaire de mots
+de passe, mais il ne remplace pas un outil professionnel comme Bitwarden,
+KeePass ou 1Password.
+
+Améliorations possibles :
+
+- ajouter une interface graphique ;
+- ajouter une copie automatique dans le presse-papiers ;
+- ajouter une recherche plus avancée ;
+- ajouter une expiration automatique de session ;
+- ajouter une sauvegarde chiffrée sur support externe.
+
+## Compétences travaillées
+
+- Programmation Python.
+- Gestion de fichiers.
+- Manipulation de JSON.
+- Chiffrement de données.
+- Génération aléatoire sécurisée.
+- Organisation d'un projet.
+- Tests manuels.
+- Logique d'application terminal.

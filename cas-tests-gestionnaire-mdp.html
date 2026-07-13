@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex,nofollow">
+    <meta name="googlebot" content="noindex,nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cas de test - Gestionnaire de Mots de Passe</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="text-document-body">
+    <main class="text-document">
+        <pre>CAS DE TEST 1 - CRÉATION DU COFFRE ET AJOUT SIMPLE
+
+Objectif :
+Vérifier que le programme crée un coffre et ajoute un mot de passe.
+
+Étapes :
+1. Lancer le programme.
+2. Créer un mot de passe maître.
+3. Choisir &quot;Ajouter un mot de passe&quot;.
+4. Entrer le service : Gmail
+5. Entrer l&#x27;identifiant : samy@gmail.com
+6. Générer un mot de passe fort.
+7. Ajouter une note facultative.
+8. Revenir au menu et lister les services.
+
+Résultat attendu :
+Le service Gmail apparaît dans la liste. Le fichier coffre_mdp.json est créé.
+
+
+CAS DE TEST 2 - RECHERCHE ET AFFICHAGE
+
+Objectif :
+Vérifier que l&#x27;utilisateur peut retrouver une entrée existante.
+
+Étapes :
+1. Relancer le programme.
+2. Saisir le bon mot de passe maître.
+3. Choisir &quot;Rechercher une entrée&quot;.
+4. Rechercher : Gmail
+5. Sélectionner le résultat.
+6. Accepter d&#x27;afficher le mot de passe.
+
+Résultat attendu :
+Le programme affiche le service, l&#x27;identifiant, la note et le mot de passe.
+
+
+CAS DE TEST 3 - ERREUR DE MOT DE PASSE MAÎTRE
+
+Objectif :
+Vérifier que le coffre refuse l&#x27;accès avec un mauvais mot de passe maître.
+
+Étapes :
+1. Lancer le programme avec un coffre déjà créé.
+2. Entrer un mauvais mot de passe maître.
+3. Recommencer trois fois.
+
+Résultat attendu :
+Le programme indique que le mot de passe maître est incorrect et refuse l&#x27;accès au coffre.
+
+
+CAS DE TEST 4 - SUPPRESSION D&#x27;UNE ENTRÉE
+
+Objectif :
+Vérifier que le programme peut supprimer un mot de passe enregistré.
+
+Étapes :
+1. Ouvrir le coffre avec le bon mot de passe maître.
+2. Choisir &quot;Supprimer une entrée&quot;.
+3. Rechercher : Gmail
+4. Sélectionner l&#x27;entrée.
+5. Confirmer la suppression.
+6. Lister les services.
+
+Résultat attendu :
+Le service Gmail n&#x27;apparaît plus dans la liste.
+</pre>
+    </main>
+</body>
+</html>
